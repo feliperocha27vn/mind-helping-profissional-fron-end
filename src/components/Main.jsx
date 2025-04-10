@@ -55,44 +55,65 @@ export function Main() {
   ]
 
   return (
-    <div className="flex flex-col w-full items-center">
-      <img
-        src={imagemPrincipalInicio}
-        alt="Imagem que mostra nosso aplicativo no celular"
-      />
-      <div className="px-8 w-full">
-        <h1 className="text-2xl mt-5 font-medium text-start">Sobre nós</h1>
-        <p className="text-base mt-1.5 font-light">
-          Nosso aplicativo leva a saúde mental para todos os cantos do Brasil,
-          deve ser acessível a todos. Buscamos profissionais comprometidos com a
-          missão de tornar o cuidado emocional acessível a todos. Junte-se a nós
-          e faça parte de uma comunidade que transforma vidas através da saúde
-          mental.
-        </p>
-        <h1 className="text-2xl mt-5 font-medium text-start">
-          Trabalhe conosco
-        </h1>
+    <div className="flex flex-col w-full items-center px-8 ">
+      <div className="flex flex-col items-center justify-center w-full md:flex-row md:gap-x-16">
         <img
-          src={imagemProfissional}
-          alt="Imagem de exemplo de um profissional"
-          className="mt-2.5"
+          src={imagemPrincipalInicio}
+          alt="Imagem que mostra nosso aplicativo no celular"
         />
-        <p className="font-light mt-2.5">
-          Nosso aplicativo leva a saúde mental para todos os cantos do Brasil,
-          deve ser acessível a todos. Buscamos profissionais comprometidos com a
-          missão de tornar o cuidado emocional acessível a todos.
-        </p>
-        <p className="font-medium">
-          Junte-se a nós e faça parte de uma comunidade que transforma vidas
-          através da saúde mental.
-        </p>
-        <div className="w-full flex justify-center mt-10">
-          <button
-            type="button"
-            className="text-2xl px-8 py-3 bg-zinc-500 rounded-4xl w-[300px]"
-          >
-            JUNTE-SE A NÓS
-          </button>
+        <div className="md:w-80">
+          <h1 className="text-2xl mt-5 font-medium text-start w-full">
+            Sobre nós
+          </h1>
+          <p className="text-base mt-1.5 font-light">
+            Nosso aplicativo leva a saúde mental para todos os cantos do Brasil,
+            deve ser acessível a todos. Buscamos profissionais comprometidos com
+            a missão de tornar o cuidado emocional acessível a todos. Junte-se a
+            nós e faça parte de uma comunidade que transforma vidas através da
+            saúde mental.
+          </p>
+        </div>
+      </div>
+      <div className="flex flex-col items-center justify-center w-full md:flex-row">
+        <div className="md:hidden">
+          <h1 className="text-2xl mt-5 font-medium text-start w-full">
+            Trabalhe conosco
+          </h1>
+          <img
+            src={imagemProfissional}
+            alt="Imagem de exemplo de um profissional"
+            className="mt-2.5"
+          />
+        </div>
+        <div className="md:w-80 md:flex md:justify-center md:items-center md:gap-x-16">
+          <div>
+            <h1 className="hidden md:block text-2xl mt-5 font-medium text-start w-full">
+              Trabalhe conosco
+            </h1>
+            <p className="font-light mt-2.5">
+              Nosso aplicativo leva a saúde mental para todos os cantos do
+              Brasil, deve ser acessível a todos. Buscamos profissionais
+              comprometidos com a missão de tornar o cuidado emocional acessível
+              a todos.
+            </p>
+            <p className="font-medium">
+              Junte-se a nós e faça parte de uma comunidade que transforma vidas
+              através da saúde mental.
+            </p>
+            <div className="w-full flex justify-center mt-10">
+              <button
+                type="button"
+                className="text-2xl px-8 py-3 bg-zinc-500 rounded-4xl w-[300px]"
+              >
+                JUNTE-SE A NÓS
+              </button>
+            </div>
+          </div>
+          <img
+            src={imagemProfissional}
+            alt="Imagem de exemplo de um profissional"
+            className="mt-2.5"
+          />
         </div>
       </div>
       <h1 className="w-full pl-3 text-2xl mt-10 font-medium text-start">
