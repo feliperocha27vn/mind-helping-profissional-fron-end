@@ -1,3 +1,4 @@
+import { useNavigate } from 'react-router'
 import imagemPrincipalInicio from '../assets/imagem-principal-inicio.png'
 import imagemProfissional from '../assets/profissional-image.png'
 
@@ -54,6 +55,12 @@ export function Main() {
     },
   ]
 
+  const navigate = useNavigate()
+
+  function handleNavigateRegister() {
+    navigate('/cadastro-profissional')
+  }
+
   return (
     <div className="flex flex-col w-full items-center px-8 ">
       <div className="flex flex-col items-center justify-center w-full md:flex-row md:gap-x-16">
@@ -61,7 +68,7 @@ export function Main() {
           src={imagemPrincipalInicio}
           alt="Imagem que mostra nosso aplicativo no celular"
         />
-        <div className="md:w-80">
+        <div className="md:w-5/12 xl:w-4/12">
           <h1 className="text-2xl mt-5 font-medium text-start w-full">
             Sobre nós
           </h1>
@@ -75,6 +82,7 @@ export function Main() {
         </div>
       </div>
       <div className="flex flex-col items-center justify-center w-full md:flex-row">
+        {/* mobile */}
         <div className="md:hidden">
           <h1 className="text-2xl mt-5 font-medium text-start w-full">
             Trabalhe conosco
@@ -85,8 +93,8 @@ export function Main() {
             className="mt-2.5"
           />
         </div>
-        <div className="md:w-80 md:flex md:justify-center md:items-center md:gap-x-16">
-          <div>
+        <div className="md:w-80 lg:w-full md:flex md:justify-center md:items-center md:gap-x-16">
+          <div className="lg:w-5/12 xl:w-4/12">
             <h1 className="hidden md:block text-2xl mt-5 font-medium text-start w-full">
               Trabalhe conosco
             </h1>
@@ -103,7 +111,8 @@ export function Main() {
             <div className="w-full flex justify-center mt-10">
               <button
                 type="button"
-                className="text-2xl px-8 py-3 bg-zinc-500 rounded-4xl w-[300px]"
+                className="text-2xl px-8 py-3 bg-zinc-500 rounded-4xl w-80"
+                onClick={handleNavigateRegister}
               >
                 JUNTE-SE A NÓS
               </button>
@@ -112,7 +121,7 @@ export function Main() {
           <img
             src={imagemProfissional}
             alt="Imagem de exemplo de um profissional"
-            className="mt-2.5"
+            className="mt-2.5 hidden md:block"
           />
         </div>
       </div>
