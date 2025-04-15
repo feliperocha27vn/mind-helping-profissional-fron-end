@@ -1,7 +1,37 @@
+// Components
 import { Checkbox } from '@/components/ui/checkbox'
 import { Input } from './Input'
+import { Button } from '@/components/ui/button'
+// Libs
+import axios from 'axios'
+// Hooks
+import { useEffect, useState } from 'react'
 
 export function Register() {
+  const api = axios
+  const [cep, setCep] = useState('')
+  const [dataCep, setDataCep] = useState('')
+
+  function handleChangeBlurCep(event) {
+    const cepValue = event.target.value
+    const cleanCep = cepValue.replace(/\D/g, '')
+    setCep(cleanCep)
+  }
+
+  // biome-ignore lint/correctness/useExhaustiveDependencies: <explanation>
+  useEffect(() => {
+    if (cep.length === 8) {
+      api
+        .get(`https://viacep.com.br/ws/${cep}/json/`)
+        .then(response => {
+          setDataCep(response.data)
+        })
+        .catch(err => {
+          console.error('Erro ao buscar dados do CEP:', err)
+        })
+    }
+  }, [cep])
+
   return (
     <div className="flex flex-col items-center justify-center">
       <form className="w-full flex flex-col items-center p-6">
@@ -40,7 +70,7 @@ export function Register() {
           <div className="flex items-center gap-x-3">
             <div>
               <p>CEP</p>
-              <Input type="text" name="cep" />
+              <Input type="text" name="cep" onHandler={handleChangeBlurCep} />
             </div>
             <div className="self-end">
               <p>Número</p>
@@ -49,16 +79,24 @@ export function Register() {
           </div>
           <div className="space-y-1">
             <p className="font-light">Logradouro</p>
-            <Input type="text" name="logradouro" />
+            <Input
+              type="text"
+              name="logradouro"
+              inputValue={dataCep.logradouro}
+            />
           </div>
           <div className="flex items-center gap-x-3">
             <div>
               <p>Bairro</p>
-              <Input type="text" name="bairro" />
+              <Input type="text" name="bairro" inputValue={dataCep.bairro} />
             </div>
             <div className="self-end">
               <p>Cidade</p>
-              <Input type="text" name="cidade" />
+              <Input
+                type="text"
+                name="cidade"
+                inputValue={dataCep.localidade}
+              />
             </div>
           </div>
           <div className="space-y-1">
@@ -84,7 +122,19 @@ export function Register() {
               </p>
             </div>
           </div>
+          <div className="items-top flex space-x-2">
+            <Checkbox id="terms2" className="border-zinc-500" />
+            <div className="grid gap-1.5 leading-none">
+              <label
+                htmlFor="terms2"
+                className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+              >
+                Li e aceito os termos de condição
+              </label>
+            </div>
+          </div>
         </div>
+        <Button className={'mt-10 p-5'}>Cadastrar</Button>
       </form>
     </div>
   )

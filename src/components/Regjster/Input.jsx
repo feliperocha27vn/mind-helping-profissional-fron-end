@@ -1,9 +1,11 @@
-export function Input({ type, name }) {
+export function Input({ type, name, onHandler, inputValue }) {
   return (
     <input
       type={type}
       name={name}
-      className="border border-zinc-500 w-full py-3 px-4 rounded-xl outline"
+      onBlur={onHandler}
+      value={inputValue}
+      className="border border-zinc-800 w-full py-3 px-4 rounded-xl outline"
     />
   )
 }

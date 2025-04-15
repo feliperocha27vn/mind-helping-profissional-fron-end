@@ -62,7 +62,7 @@ export function Main() {
   }
 
   return (
-    <div className="flex flex-col w-full items-center px-8 ">
+    <div className="flex flex-col w-full items-center-safe px-8 xl:px-0">
       <div className="flex flex-col items-center justify-center w-full md:flex-row md:gap-x-16">
         <img
           src={imagemPrincipalInicio}
