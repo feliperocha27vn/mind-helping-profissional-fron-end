@@ -13,9 +13,8 @@ export function Register() {
   const [dataCep, setDataCep] = useState('')
 
   function handleChangeBlurCep(event) {
-    const cepValue = event.target.value
-    const cleanCep = cepValue.replace(/\D/g, '')
-    setCep(cleanCep)
+    const cepValue = event.target.value.replace(/\D/g, '')
+    setCep(cepValue)
   }
 
   // biome-ignore lint/correctness/useExhaustiveDependencies: <explanation>
@@ -31,6 +30,16 @@ export function Register() {
         })
     }
   }, [cep])
+
+  function handleChange(event) {
+    const { name, value } = event.target
+    setDataCep(prevState => {
+      return {
+        ...prevState,
+        [name]: value,
+      }
+    })
+  }
 
   return (
     <div className="flex flex-col items-center justify-center">
@@ -87,12 +96,18 @@ export function Register() {
               type="text"
               name="logradouro"
               inputValue={dataCep.logradouro}
+              onHandlerChange={handleChange}
             />
           </div>
           <div className="flex items-center gap-x-3">
             <div>
               <p>Bairro</p>
-              <Input type="text" name="bairro" inputValue={dataCep.bairro} />
+              <Input
+                type="text"
+                name="bairro"
+                inputValue={dataCep.bairro}
+                onHandlerChange={handleChange}
+              />
             </div>
             <div className="self-end">
               <p>Cidade</p>
@@ -100,6 +115,7 @@ export function Register() {
                 type="text"
                 name="cidade"
                 inputValue={dataCep.localidade}
+                onHandlerChange={handleChange}
               />
             </div>
           </div>
@@ -138,7 +154,7 @@ export function Register() {
             </div>
           </div>
         </div>
-        <Button className={'mt-10 p-5'}>Cadastrar</Button>
+        <Button className={'mt-10 py-6 px-5 bg-blue-400'}>Cadastrar</Button>
       </form>
     </div>
   )
