@@ -1,6 +1,6 @@
 // Components
 import { Checkbox } from '@/components/ui/checkbox'
-import { Input } from './Input'
+import { Input } from '../../components/Input'
 import { Button } from '@/components/ui/button'
 // Libs
 import axios from 'axios'
@@ -70,7 +70,11 @@ export function Register() {
           <div className="flex items-center gap-x-3">
             <div>
               <p>CEP</p>
-              <Input type="text" name="cep" onHandler={handleChangeBlurCep} />
+              <Input
+                type="text"
+                name="cep"
+                onHandlerBlur={handleChangeBlurCep}
+              />
             </div>
             <div className="self-end">
               <p>Número</p>
