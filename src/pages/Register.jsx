@@ -1,6 +1,6 @@
 // Components
 import { Checkbox } from '@/components/ui/checkbox'
-import { Input } from '../../components/Input'
+import { Input } from '@/components/Input'
 import { Button } from '@/components/ui/button'
 // Libs
 import axios from 'axios'
@@ -42,7 +42,7 @@ export function Register() {
   }
 
   return (
-    <div className="hidden lg:min-h-screen lg:bg-blue-500 lg:flex lg:items-center lg:justify-between">
+    <div className=" lg:min-h-screen lg:bg-blue-500 lg:flex lg:items-center lg:justify-between">
       <div className="flex flex-col items-center justify-center lg:h-full lg:bg-white lg:px-8 lg:w-8/12">
         <form className="w-full flex flex-col items-center p-6 max-w-2xl">
           <h1 className="text-3xl w-7/12 text-center lg:w-10/12">
@@ -55,21 +55,21 @@ export function Register() {
             </div>
             <div className="flex items-center gap-x-3 w-full">
               <div className="w-6/12">
-                <p>Data de Nascimento</p>
+                <p className="font-light">Data de Nascimento</p>
                 <Input type="text" name="data_nascimento" />
               </div>
               <div className="self-end w-6/12">
-                <p>CPF</p>
+                <p className="font-light">CPF</p>
                 <Input type="text" name="cpf" />
               </div>
             </div>
             <div className="flex items-center gap-x-3 w-full">
               <div className="w-6/12">
-                <p>Telefone</p>
+                <p className="font-light">Telefone</p>
                 <Input type="text" name="telefone" />
               </div>
               <div className="self-end w-6/12">
-                <p>CRP</p>
+                <p className="font-light">CRP</p>
                 <Input type="text" name="crp" />
               </div>
             </div>
@@ -79,7 +79,7 @@ export function Register() {
             </div>
             <div className="flex items-center gap-x-3">
               <div className="w-6/12">
-                <p>CEP</p>
+                <p className="font-light">CEP</p>
                 <Input
                   type="text"
                   name="cep"
@@ -87,7 +87,7 @@ export function Register() {
                 />
               </div>
               <div className="self-end w-6/12">
-                <p>Número</p>
+                <p className="font-light">Número</p>
                 <Input type="text" name="numero" />
               </div>
             </div>
@@ -102,7 +102,7 @@ export function Register() {
             </div>
             <div className="flex items-center gap-x-3">
               <div className="w-6/12">
-                <p>Bairro</p>
+                <p className="font-light">Bairro</p>
                 <Input
                   type="text"
                   name="bairro"
@@ -111,7 +111,7 @@ export function Register() {
                 />
               </div>
               <div className="self-end w-6/12">
-                <p>Cidade</p>
+                <p className="font-light">Cidade</p>
                 <Input
                   type="text"
                   name="cidade"

@@ -4,6 +4,7 @@ export function Input({
   onHandlerBlur,
   inputValue,
   onHandlerChange,
+  textPlaceholder,
 }) {
   return (
     <input
@@ -12,6 +13,7 @@ export function Input({
       onBlur={onHandlerBlur}
       onChange={onHandlerChange}
       value={inputValue}
+      placeholder={textPlaceholder}
       className="border border-zinc-800 w-full py-3 px-4 rounded-xl outline"
     />
   )
