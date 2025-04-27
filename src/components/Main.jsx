@@ -63,7 +63,7 @@ export function Main() {
 
   return (
     <div className="flex flex-col w-full items-center-safe px-8 xl:px-0">
-      <div className="flex flex-col items-center justify-center w-full md:flex-row md:gap-x-16">
+      <div className="flex flex-col items-center justify-center w-full md:flex-row md:gap-x-16 xl:gap-x-50">
         <img
           src={imagemPrincipalInicio}
           alt="Imagem que mostra nosso aplicativo no celular"
@@ -93,7 +93,7 @@ export function Main() {
             className="mt-2.5"
           />
         </div>
-        <div className="md:w-80 lg:w-full md:flex md:justify-center md:items-center md:gap-x-16">
+        <div className="md:w-80 lg:w-full md:flex md:justify-center md:items-center md:gap-x-16 xl:gap-x-50">
           <div className="lg:w-5/12 xl:w-4/12">
             <h1 className="hidden md:block text-2xl mt-5 font-medium text-start w-full">
               Trabalhe conosco
@@ -111,7 +111,7 @@ export function Main() {
             <div className="w-full flex justify-center mt-10">
               <button
                 type="button"
-                className="text-2xl px-8 py-3 bg-zinc-500 rounded-4xl w-80"
+                className="text-2xl px-8 py-3 bg-zinc-500 rounded-4xl w-80  cursor-pointer"
                 onClick={handleNavigateRegister}
               >
                 JUNTE-SE A NÓS
@@ -125,19 +125,21 @@ export function Main() {
           />
         </div>
       </div>
-      <h1 className="w-full pl-3 text-2xl mt-10 font-medium text-start">
-        Perguntas frequentes
-      </h1>
-      <Accordion type="single" collapsible className="w-full px-3 mt-2.5">
-        {perguntasFrequentes.map(item => {
-          return (
-            <AccordionItem value={item.id} key={item.id}>
-              <AccordionTrigger>{item.title}</AccordionTrigger>
-              <AccordionContent>{item.content}</AccordionContent>
-            </AccordionItem>
-          )
-        })}
-      </Accordion>
+      <div className="w-full xl:w-9/12">
+        <h1 className="w-full pl-3 text-2xl mt-10 font-medium text-start">
+          Perguntas frequentes
+        </h1>
+        <Accordion type="single" collapsible className="w-full px-3 mt-2.5">
+          {perguntasFrequentes.map(item => {
+            return (
+              <AccordionItem value={item.id} key={item.id}>
+                <AccordionTrigger>{item.title}</AccordionTrigger>
+                <AccordionContent>{item.content}</AccordionContent>
+              </AccordionItem>
+            )
+          })}
+        </Accordion>
+      </div>
     </div>
   )
 }

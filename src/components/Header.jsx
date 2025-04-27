@@ -1,17 +1,7 @@
 // Images
 import { useNavigate } from 'react-router'
 import logoMindHelping from '../assets/mind-helping-logo.png'
-// Components
-import {
-  Sheet,
-  SheetClose,
-  SheetContent,
-  SheetDescription,
-  SheetFooter,
-  SheetHeader,
-  SheetTitle,
-  SheetTrigger,
-} from '@/components/ui/sheet'
+import { MenuMobile } from './MenuMobile'
 
 export function Header() {
   const navigate = useNavigate()
@@ -29,31 +19,16 @@ export function Header() {
         </div>
         <img src={logoMindHelping} className="h-16" alt="Logo do MindHelping" />
       </div>
-      <Sheet>
-        <SheetTrigger className="space-y-1">
-          <div className="h-0.5 w-6 bg-white" />
-          <div className="h-0.5 w-6 bg-white" />
-          <div className="h-0.5 w-6 bg-white" />
-        </SheetTrigger>
-        <SheetContent>
-          <SheetHeader className={'hidden'}>
-            <SheetTitle />
-            <SheetDescription />
-          </SheetHeader>
-          <div className="p-6 pt-12 space-y-3">
-            <p
-              onClick={handleNavigateLogin}
-              className="w-[9rem] cursor-pointer"
-            >
-              Já tenho acesso
-            </p>
-            <p>Sobre nós</p>
-            <p>Trablhe conosco</p>
-            <p>FAQ</p>
-            <p>Contato</p>
-          </div>
-        </SheetContent>
-      </Sheet>
+      <MenuMobile />
+      <div className="hidden md:flex md:items-center md:gap-4">
+        <p onClick={handleNavigateLogin} className="w-[9rem] cursor-pointer">
+          Já tenho acesso
+        </p>
+        <p className="cursor-pointer">Sobre nós</p>
+        <p className="cursor-pointer">Trablhe conosco</p>
+        <p className="cursor-pointer">FAQ</p>
+        <p className="cursor-pointer">Contato</p>
+      </div>
     </div>
   )
 }
