@@ -1,5 +1,5 @@
 import { GoogleLoginButton } from '@/components/GoogleLoginButton'
-import { Input } from '@/components/Input'
+import { Input } from '@/components/ui/input'
 import { Button } from '@/components/ui/button'
 import { Checkbox } from '@/components/ui/checkbox'
 import { GoogleOAuthProvider } from '@react-oauth/google'
@@ -20,12 +20,12 @@ export function LoginForm() {
   }
 
   return (
-    <form className="p-5 lg:ml-4 md:py-32 md:px-10 md:rounded-2xl space-y-4 bg-white">
+    <form className="p-5 lg:ml-4 md:py-32 md:px-10 md:rounded-2xl space-y-4 bg-white w-full max-w-[40rem]">
       <h1 className="text-3xl font-medium text-center">Faça login</h1>
       <span className="font-light">Usuário</span>
-      <Input textPlaceholder="seuemail@email.com" />
+      <Input className={'border-zinc-400'} />
       <span className="font-light">Senha</span>
-      <Input textPlaceholder="******************" />
+      <Input className={'border-zinc-400'} />
       <div className="flex items-center gap-x-2">
         <Checkbox className={'border-black  '} />
         <span className="font-light">Manter-me conectado</span>

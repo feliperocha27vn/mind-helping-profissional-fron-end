@@ -6,7 +6,7 @@ import ReactDOM from 'react-dom/client'
 // Pages
 import { App } from './App.jsx'
 import { Register } from './pages/Register'
-import { Login } from './pages/Login'
+import { Login } from './pages/Login/Login'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <BrowserRouter>
