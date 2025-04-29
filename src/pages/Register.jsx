@@ -4,6 +4,7 @@ import { Input } from '@/components/Input'
 import { Button } from '@/components/ui/button'
 // Libs
 import axios from 'axios'
+import { motion } from 'framer-motion'
 // Hooks
 import { useEffect, useState } from 'react'
 // Images
