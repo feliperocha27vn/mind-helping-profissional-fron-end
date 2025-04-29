@@ -140,12 +140,12 @@ body {
 
 @media (min-width: 1280px){
     html {
-        font-size: 95%;
+        font-size: 130%;
     }
 }
 
 @media (min-width: 1440px){
     html {
-        font-size:120%;
+        font-size: 120%;
     }
 }

@@ -8,6 +8,10 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from '@/components/ui/accordion'
+import { Footer } from './Footer'
+
+import { motion } from 'framer-motion'
+import { Button } from './ui/button'
 
 export function Main() {
   const perguntasFrequentes = [
@@ -63,16 +67,24 @@ export function Main() {
 
   return (
     <div className="flex flex-col w-full items-center-safe px-8 xl:px-0">
-      <div className="flex flex-col items-center justify-center w-full md:flex-row md:gap-x-16 xl:gap-x-50">
+      <motion.div
+        className="flex flex-col items-center justify-center w-full md:flex-row md:gap-x-12 xl:gap-x-20 xl:h-[40rem]"
+        initial={{ x: -100, opacity: 0 }}
+        animate={{ x: 0, opacity: 1 }}
+        transition={{ duration: 0.6 }}
+      >
         <img
           src={imagemPrincipalInicio}
           alt="Imagem que mostra nosso aplicativo no celular"
+          className="xl:h-[32rem]"
+          initial={{ scale: 0 }}
+          animate={{ scale: 1 }}
         />
-        <div className="md:w-5/12 xl:w-4/12">
-          <h1 className="text-2xl mt-5 font-medium text-start w-full">
+        <div className="md:w-5/12 xl:w-6/12">
+          <h1 className="text-2xl mt-5 font-medium text-start w-full xl:text-6xl">
             Sobre nós
           </h1>
-          <p className="text-base mt-1.5 font-light">
+          <p className="text-base mt-1.5 font-light xl:text-2xl">
             Nosso aplicativo leva a saúde mental para todos os cantos do Brasil,
             deve ser acessível a todos. Buscamos profissionais comprometidos com
             a missão de tornar o cuidado emocional acessível a todos. Junte-se a
@@ -80,7 +92,7 @@ export function Main() {
             saúde mental.
           </p>
         </div>
-      </div>
+      </motion.div>
       <div className="flex flex-col items-center justify-center w-full md:flex-row">
         {/* mobile */}
         <div className="md:hidden">
@@ -93,37 +105,42 @@ export function Main() {
             className="mt-2.5"
           />
         </div>
-        <div className="md:w-80 lg:w-full md:flex md:justify-center md:items-center md:gap-x-16 xl:gap-x-50">
-          <div className="lg:w-5/12 xl:w-4/12">
-            <h1 className="hidden md:block text-2xl mt-5 font-medium text-start w-full">
+        <motion.div
+          className="md:w-80 lg:w-full md:flex md:justify-center md:items-center md:gap-x-16 xl:gap-x-20 xl:h-[40rem]"
+          initial={{ x: 100, opacity: 0 }}
+          animate={{ x: 0, opacity: 1 }}
+          transition={{ duration: 0.6 }}
+        >
+          <div className="lg:w-5/12 xl:w-6/12">
+            <h1 className="hidden md:block text-2xl mt-5 font-medium text-start w-full xl:text-6xl">
               Trabalhe conosco
             </h1>
-            <p className="font-light mt-2.5">
+            <p className="font-light mt-2.5 xl:text-2xl">
               Nosso aplicativo leva a saúde mental para todos os cantos do
               Brasil, deve ser acessível a todos. Buscamos profissionais
               comprometidos com a missão de tornar o cuidado emocional acessível
               a todos.
             </p>
-            <p className="font-medium">
+            <p className="font-medium xl:text-2xl">
               Junte-se a nós e faça parte de uma comunidade que transforma vidas
               através da saúde mental.
             </p>
             <div className="w-full flex justify-center mt-10">
-              <button
+              <Button
                 type="button"
-                className="text-2xl px-8 py-3 bg-zinc-500 rounded-4xl w-80  cursor-pointer"
+                className="text-2xl px-8 py-6 bg-zinc-900 rounded-4xl w-80  cursor-pointer"
                 onClick={handleNavigateRegister}
               >
                 JUNTE-SE A NÓS
-              </button>
+              </Button>
             </div>
           </div>
           <img
             src={imagemProfissional}
             alt="Imagem de exemplo de um profissional"
-            className="mt-2.5 hidden md:block"
+            className="mt-2.5 hidden md:block xl:h-[32rem]"
           />
-        </div>
+        </motion.div>
       </div>
       <div className="w-full xl:w-9/12">
         <h1 className="w-full pl-3 text-2xl mt-10 font-medium text-start">
@@ -139,6 +156,7 @@ export function Main() {
             )
           })}
         </Accordion>
+        <Footer />
       </div>
     </div>
   )

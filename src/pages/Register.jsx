@@ -6,6 +6,8 @@ import { Button } from '@/components/ui/button'
 import axios from 'axios'
 // Hooks
 import { useEffect, useState } from 'react'
+// Images
+import salaProfissional from '../assets/sala-profissional.jpeg'
 
 export function Register() {
   const api = axios
@@ -42,13 +44,11 @@ export function Register() {
   }
 
   return (
-    <div className=" lg:min-h-screen lg:bg-blue-500 lg:flex lg:items-center lg:justify-between">
+    <div className=" lg:min-h-screen lg:flex lg:items-center lg:justify-between">
       <div className="flex flex-col items-center justify-center lg:h-full lg:bg-white lg:px-8 lg:w-8/12">
-        <form className="w-full flex flex-col items-center p-6 max-w-2xl">
-          <h1 className="text-3xl w-7/12 text-center lg:w-10/12">
-            Cadastro de Profissional
-          </h1>
-          <div className="mt-10 w-full space-y-5">
+        <form className="w-8/12 flex flex-col items-center p-6 max-w-2xl">
+          <div className="mt-10 w-full space-y-3">
+            <h1 className="text-2xl w-7/12 lg:w-10/12 mb-14">REGISTRO</h1>
             <div className="space-y-1 w-full">
               <p className="font-light">Nome</p>
               <Input type="text" name="nome" />
@@ -156,22 +156,24 @@ export function Register() {
               <div className="grid gap-1.5 leading-none">
                 <label
                   htmlFor="terms2"
-                  className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+                  className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70 underline"
                 >
                   Li e aceito os termos de condição
                 </label>
               </div>
             </div>
           </div>
-          <Button className={'mt-10 py-6 px-5 bg-blue-400'}>Cadastrar</Button>
+          <Button className={'mt-10 py-6 px-5'}>Cadastrar</Button>
         </form>
       </div>
-      <div className="hidden lg:block lg:pr-8">
-        <div className="bg-blue-500 text-white w-full">
-          <h1 className="title-mindHelping text-5xl">MIND HELPING</h1>
-          <p className="text-end">Profissional</p>
-        </div>
-      </div>
+      <motion.img
+        src={salaProfissional}
+        alt="Sala Profissional"
+        className="m-10 rounded-2xl w-5/12"
+        initial={{ x: 100, opacity: 0 }}
+        animate={{ x: 0, opacity: 1 }}
+        transition={{ duration: 0.6 }}
+      />
     </div>
   )
 }

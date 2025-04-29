@@ -11,7 +11,7 @@ export function Header() {
   }
 
   return (
-    <div className="bg-[url(../assets/backgorund-blur-header.png)] p-5 flex justify-between items-center">
+    <div className=" p-5 flex justify-between items-center">
       <div className="flex items-center gap-2">
         <div>
           <p className="text-2xl title-mindHelping">Mind Helping</p>
@@ -20,7 +20,7 @@ export function Header() {
         <img src={logoMindHelping} className="h-16" alt="Logo do MindHelping" />
       </div>
       <MenuMobile />
-      <div className="hidden md:flex md:items-center md:gap-4">
+      <div className="hidden lg:flex lg:items-center lg:gap-4">
         <p onClick={handleNavigateLogin} className="w-[9rem] cursor-pointer">
           Já tenho acesso
         </p>

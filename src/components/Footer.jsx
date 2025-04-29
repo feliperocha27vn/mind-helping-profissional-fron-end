@@ -3,7 +3,7 @@ import { Phone } from 'lucide-react'
 
 export function Footer() {
   return (
-    <div className="mt-8 p-3">
+    <div className="mt-8 p-3 border-[0.5px] rounded-xl mb-4">
       <h1 className="text-2xl font-semibold">Contate-nos</h1>
       <div className="mt-2.5 space-y-2.5">
         <div className="flex items-center gap-x-2.5">

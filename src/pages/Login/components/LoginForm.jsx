@@ -20,12 +20,12 @@ export function LoginForm() {
   }
 
   return (
-    <form className="p-5 lg:ml-4 md:py-32 md:px-10 md:rounded-2xl space-y-4 bg-white w-full max-w-[40rem]">
-      <h1 className="text-3xl font-medium text-center">Faça login</h1>
+    <form className="p-5 lg:ml-4 md:py-20 md:px-10 md:rounded-2xl space-y-4 bg-white w-full max-w-[40rem] lg:w-[32rem]">
+      <h1 className="text-2xl font-medium lg:mb-14">LOGIN</h1>
       <span className="font-light">Usuário</span>
       <Input className={'border-zinc-400'} />
       <span className="font-light">Senha</span>
-      <Input className={'border-zinc-400'} />
+      <Input className={'border-zinc-400'} type="password" />
       <div className="flex items-center gap-x-2">
         <Checkbox className={'border-black  '} />
         <span className="font-light">Manter-me conectado</span>
