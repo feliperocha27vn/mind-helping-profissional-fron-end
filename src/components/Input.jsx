@@ -14,7 +14,7 @@ export function Input({
       onChange={onHandlerChange}
       value={inputValue}
       placeholder={textPlaceholder}
-      className="border border-zinc-800 w-full py-3 px-4 rounded-xl outline"
+      className="border border-zinc-950 w-full py-2 px-4 rounded-md outline text-sm"
     />
   )
 }

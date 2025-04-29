@@ -1,5 +1,5 @@
 import { GoogleLoginButton } from '@/components/GoogleLoginButton'
-import { Input } from '@/components/ui/input'
+import { Input } from '@/components/Input'
 import { Button } from '@/components/ui/button'
 import { Checkbox } from '@/components/ui/checkbox'
 import { GoogleOAuthProvider } from '@react-oauth/google'
@@ -9,19 +9,9 @@ export function LoginForm() {
     navigate('/cadastro-profissional')
   }
 
-  const handleGoogleLogin = async () => {
-    try {
-      const result = await signInWithPopup(auth, googleProvider)
-      console.log(result.user)
-      // Adicione sua lógica após o login
-    } catch (error) {
-      console.error('Erro na autenticação:', error)
-    }
-  }
-
   return (
-    <form className="p-5 lg:ml-4 md:py-20 md:px-10 md:rounded-2xl space-y-4 bg-white w-full max-w-[40rem] lg:w-[32rem]">
-      <h1 className="text-2xl font-medium lg:mb-14">LOGIN</h1>
+    <form className="p-5 lg:ml-4 md:py-20 md:px-10 md:rounded-2xl space-y-4 bg-white w-full max-w-[40rem] lg:w-[32rem] xl:shadow-2xl">
+      <h1 className="text-2xl font-medium lg:mb-4">LOGIN</h1>
       <span className="font-light">Usuário</span>
       <Input className={'border-zinc-400'} />
       <span className="font-light">Senha</span>
