@@ -56,8 +56,8 @@ export function RegisterForm() {
   }
 
   return (
-    <form className="w-5/12 flex flex-col items-center px-6 py-3 max-w-2xl bg-slate-100 rounded-2xl shadow-2xl text-black">
-      <div className="mt-10 w-full space-y-3">
+    <form className="lg:w-5/12 flex flex-col items-center px-2 lg:px-6 lg:py-3 max-w-2xl bg-slate-100 lg:rounded-2xl lg:shadow-2xl text-black">
+      <div className="mt-10 w-full space-y-5 lg:space-y-3">
         <h1 className="text-2xl w-7/12 lg:w-10/12 mb-4">REGISTRO</h1>
         <div className="space-y-1 w-full">
           <Input
