@@ -18,7 +18,7 @@ export function Footer() {
   }
 
   return (
-    <div className="space-y-5 mt-8 p-3 border-[0.5px] rounded-xl mb-4 lg:flex lg:items-start lg:justify-between">
+    <div className="space-y-5 mt-8 p-3 border-[0.5px] rounded-xl mb-4 lg:flex lg:items-start lg:justify-between lg:gap-x-3">
       <div>
         <h1 className="text-xl font-semibold">Contate-nos</h1>
         <div className="mt-2.5 space-y-2.5">
