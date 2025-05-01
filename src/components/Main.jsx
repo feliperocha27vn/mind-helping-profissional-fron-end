@@ -138,7 +138,7 @@ export function Main() {
           <img
             src={imagemProfissional}
             alt="Imagem de exemplo de um profissional"
-            className="mt-2.5 hidden md:block xl:h-[32rem]"
+            className="mt-2.5 hidden md:block lg:h-[32rem] xl:h-[32rem]"
           />
         </motion.div>
       </div>
