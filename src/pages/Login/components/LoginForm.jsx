@@ -1,5 +1,5 @@
 import { GoogleLoginButton } from '@/components/GoogleLoginButton'
-import { Input } from '@/components/Input'
+import { Input } from '@/components/ui/Input'
 import { Button } from '@/components/ui/button'
 import { Checkbox } from '@/components/ui/checkbox'
 import { GoogleOAuthProvider } from '@react-oauth/google'
@@ -23,11 +23,11 @@ export function LoginForm() {
     >
       <h1 className="text-2xl font-medium lg:mb-4">LOGIN</h1>
       <span className="font-light">Usuário</span>
-      <Input className={'border-zinc-400'} />
+      <Input />
       <span className="font-light">Senha</span>
-      <Input className={'border-zinc-400'} type="password" />
+      <Input type="password" />
       <div className="flex items-center gap-x-2">
-        <Checkbox className={'border-black  '} />
+        <Checkbox className={'border-black '} />
         <span className="font-light">Manter-me conectado</span>
       </div>
       <div>
