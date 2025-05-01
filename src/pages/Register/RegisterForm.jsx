@@ -3,6 +3,7 @@ import { Button } from '@/components/ui/button'
 import { Input } from '@/components/Input'
 import axios from 'axios'
 import { useEffect, useState } from 'react'
+import { motion } from 'framer-motion'
 
 export function RegisterForm() {
   const [formData, setFormData] = useState({
@@ -56,7 +57,16 @@ export function RegisterForm() {
   }
 
   return (
-    <form className="lg:w-5/12 flex flex-col items-center px-2 lg:px-6 lg:py-3 max-w-2xl bg-slate-100 lg:rounded-2xl lg:shadow-2xl text-black">
+    <motion.form
+      className="lg:w-5/12 flex flex-col items-center px-2 lg:px-6 lg:py-3 max-w-2xl bg-slate-100 lg:rounded-2xl lg:shadow-2xl text-black"
+      initial={{ opacity: 0, scale: 0.5 }}
+      animate={{ opacity: 1, scale: 1 }}
+      transition={{
+        duration: 0.8,
+        delay: 0.2,
+        ease: [0, 0.71, 0.2, 1.01],
+      }}
+    >
       <div className="mt-10 w-full space-y-5 lg:space-y-3">
         <h1 className="text-2xl w-7/12 lg:w-10/12 mb-4">REGISTRO</h1>
         <div className="space-y-1 w-full">
@@ -238,6 +248,6 @@ export function RegisterForm() {
         </div>
       </div>
       <Button className={'mt-10 py-6 px-5'}>Cadastrar</Button>
-    </form>
+    </motion.form>
   )
 }

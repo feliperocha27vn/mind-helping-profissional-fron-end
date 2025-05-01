@@ -5,7 +5,7 @@ import { BrowserRouter, Route, Routes } from 'react-router'
 import ReactDOM from 'react-dom/client'
 // Pages
 import { App } from './App.jsx'
-import { Register } from './pages/Register'
+import { Register } from './pages/Register/Register'
 import { Login } from './pages/Login/Login'
 
 ReactDOM.createRoot(document.getElementById('root')).render(

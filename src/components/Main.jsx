@@ -66,7 +66,7 @@ export function Main() {
   }
 
   return (
-    <div className="flex flex-col w-full items-center-safe px-8 xl:px-0">
+    <div className="flex flex-col w-full items-center-safe px-8 xl:px-0 text-zinc-200">
       <motion.div
         className="flex flex-col items-center justify-center w-full md:flex-row md:gap-x-12 xl:gap-x-20 xl:h-[40rem]"
         initial={{ x: -100, opacity: 0 }}

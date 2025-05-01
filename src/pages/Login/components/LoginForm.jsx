@@ -3,6 +3,7 @@ import { Input } from '@/components/Input'
 import { Button } from '@/components/ui/button'
 import { Checkbox } from '@/components/ui/checkbox'
 import { GoogleOAuthProvider } from '@react-oauth/google'
+import { motion } from 'framer-motion'
 
 export function LoginForm() {
   function handleNoRegistration() {
@@ -10,7 +11,16 @@ export function LoginForm() {
   }
 
   return (
-    <form className="p-5 lg:ml-4 md:py-20 md:px-10 md:rounded-2xl space-y-4 bg-white w-full max-w-[40rem] lg:w-[32rem] xl:shadow-2xl">
+    <motion.form
+      className="p-5 lg:ml-4 md:py-20 md:px-10 md:rounded-2xl space-y-4 bg-white w-full max-w-[40rem] lg:w-[32rem] xl:shadow-2xl"
+      initial={{ opacity: 0, scale: 0.5 }}
+      animate={{ opacity: 1, scale: 1 }}
+      transition={{
+        duration: 0.8,
+        delay: 0.2,
+        ease: [0, 0.71, 0.2, 1.01],
+      }}
+    >
       <h1 className="text-2xl font-medium lg:mb-4">LOGIN</h1>
       <span className="font-light">Usuário</span>
       <Input className={'border-zinc-400'} />
@@ -41,6 +51,6 @@ export function LoginForm() {
           Registre-se
         </p>
       </div>
-    </form>
+    </motion.form>
   )
 }
