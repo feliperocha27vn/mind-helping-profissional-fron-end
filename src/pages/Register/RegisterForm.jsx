@@ -1,6 +1,6 @@
 import { Checkbox } from '@/components/ui/checkbox'
 import { Button } from '@/components/ui/button'
-import { Input } from '@/components/Input'
+import { Input } from '@/components/ui/Input'
 import axios from 'axios'
 import { useEffect, useState } from 'react'
 import { motion } from 'framer-motion'
@@ -73,9 +73,9 @@ export function RegisterForm() {
           <Input
             type="text"
             name="nome"
-            textPlaceholder="Digite seu nome"
-            inputValue={formData.nome}
-            onHandlerChange={handleChange}
+            placeholder="Digite seu nome"
+            value={formData.nome}
+            onChange={handleChange}
           />
         </div>
         <div className="flex items-center gap-x-3 w-full">
@@ -83,18 +83,18 @@ export function RegisterForm() {
             <Input
               type="text"
               name="data_nascimento"
-              textPlaceholder="Digite sua data de nascimento"
-              inputValue={formData.data_nascimento}
-              onHandlerChange={handleChange}
+              placeholder="Digite sua data de nascimento"
+              value={formData.data_nascimento}
+              onChange={handleChange}
             />
           </div>
           <div className="self-end w-6/12">
             <Input
               type="text"
               name="cpf"
-              textPlaceholder="Digite seu CPF"
-              inputValue={formData.cpf}
-              onHandlerChange={handleChange}
+              placeholder="Digite seu CPF"
+              value={formData.cpf}
+              onChange={handleChange}
             />
           </div>
         </div>
@@ -103,18 +103,18 @@ export function RegisterForm() {
             <Input
               type="text"
               name="telefone"
-              textPlaceholder="Digite seu telefone"
-              inputValue={formData.telefone}
-              onHandlerChange={handleChange}
+              placeholder="Digite seu telefone"
+              value={formData.telefone}
+              onChange={handleChange}
             />
           </div>
           <div className="self-end w-6/12">
             <Input
               type="text"
               name="crp"
-              textPlaceholder="Digite seu CRP"
-              inputValue={formData.crp}
-              onHandlerChange={handleChange}
+              placeholder="Digite seu CRP"
+              value={formData.crp}
+              onChange={handleChange}
             />
           </div>
         </div>
@@ -122,9 +122,9 @@ export function RegisterForm() {
           <Input
             type="text"
             name="email"
-            textPlaceholder="Digite seu email"
-            inputValue={formData.email}
-            onHandlerChange={handleChange}
+            placeholder="Digite seu email"
+            value={formData.email}
+            onChange={handleChange}
           />
         </div>
         <div className="flex items-center gap-x-3">
@@ -132,9 +132,9 @@ export function RegisterForm() {
             <Input
               type="text"
               name="cep"
-              textPlaceholder="Digite seu CEP"
-              inputValue={formData.cep}
-              onHandlerChange={handleChange}
+              placeholder="Digite seu CEP"
+              value={formData.cep}
+              onChange={handleChange}
               onBlur={handleChangeBlurCep}
             />
           </div>
@@ -142,9 +142,9 @@ export function RegisterForm() {
             <Input
               type="text"
               name="numero"
-              textPlaceholder="Digite o número"
-              inputValue={formData.numero}
-              onHandlerChange={handleChange}
+              placeholder="Digite o número"
+              value={formData.numero}
+              onChange={handleChange}
             />
           </div>
         </div>
@@ -152,9 +152,9 @@ export function RegisterForm() {
           <Input
             type="text"
             name="logradouro"
-            textPlaceholder="Digite o logradouro"
-            inputValue={formData.logradouro}
-            onHandlerChange={handleChange}
+            placeholder="Digite o logradouro"
+            value={formData.logradouro}
+            onChange={handleChange}
           />
         </div>
         <div className="flex items-center gap-x-3">
@@ -162,18 +162,18 @@ export function RegisterForm() {
             <Input
               type="text"
               name="bairro"
-              textPlaceholder="Digite seu bairro"
-              inputValue={formData.bairro}
-              onHandlerChange={handleChange}
+              placeholder="Digite seu bairro"
+              value={formData.bairro}
+              onChange={handleChange}
             />
           </div>
           <div className="self-end w-6/12">
             <Input
               type="text"
               name="cidade"
-              textPlaceholder="Digite sua cidade"
-              inputValue={formData.cidade}
-              onHandlerChange={handleChange}
+              placeholder="Digite sua cidade"
+              value={formData.cidade}
+              onChange={handleChange}
             />
           </div>
         </div>
@@ -181,27 +181,27 @@ export function RegisterForm() {
           <Input
             type="text"
             name="complemento"
-            textPlaceholder="Digite o complemento"
-            inputValue={formData.complemento}
-            onHandlerChange={handleChange}
+            placeholder="Digite o complemento"
+            value={formData.complemento}
+            onChange={handleChange}
           />
         </div>
         <div className="space-y-1">
           <Input
             type="password"
             name="senha"
-            textPlaceholder="Digite sua senha"
-            inputValue={formData.senha}
-            onHandlerChange={handleChange}
+            placeholder="Digite sua senha"
+            value={formData.senha}
+            onChange={handleChange}
           />
         </div>
         <div className="space-y-1">
           <Input
             type="password"
             name="confirmSenha"
-            textPlaceholder="Digite sua senha novamente"
-            inputValue={formData.confirmSenha}
-            onHandlerChange={handleChange}
+            placeholder="Digite sua senha novamente"
+            value={formData.confirmSenha}
+            onChange={handleChange}
           />
         </div>
         <div className="items-top flex space-x-2">
