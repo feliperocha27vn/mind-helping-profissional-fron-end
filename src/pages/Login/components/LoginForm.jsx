@@ -4,10 +4,17 @@ import { Button } from '@/components/ui/button'
 import { Checkbox } from '@/components/ui/checkbox'
 import { GoogleOAuthProvider } from '@react-oauth/google'
 import { motion } from 'framer-motion'
+import { useNavigate } from 'react-router'
 
 export function LoginForm() {
+  const navigate = useNavigate()
+
   function handleNoRegistration() {
     navigate('/cadastro-profissional')
+  }
+
+  function handleDashboard() {
+    navigate('/painel')
   }
 
   return (
@@ -36,7 +43,7 @@ export function LoginForm() {
           Recuperar
         </a>
       </div>
-      <Button type="submit" className={'w-full'}>
+      <Button type="submit" className={'w-full'} onClick={handleDashboard}>
         Login
       </Button>
       <GoogleOAuthProvider clientId="330329046724-0kffvh104f4prq00rl81b65do3pfb7rb.apps.googleusercontent.com">
