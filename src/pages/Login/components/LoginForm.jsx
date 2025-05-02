@@ -10,6 +10,8 @@ import { useForm } from 'react-hook-form'
 import { useNavigate } from 'react-router'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { z } from 'zod'
+import { useEffect, useRef } from 'react'
+import autoAnimate from '@formkit/auto-animate'
 
 const objectForValidationLoginProfissional = z.object({
   email: z
@@ -19,12 +21,14 @@ const objectForValidationLoginProfissional = z.object({
           }),
   senha: z
           .string()
-          .min(6, {message: "A senha precisa ter no mínimo 6 caracteres"})
+          .min(6, {message: "A senha é um campo obrigatório e deve ter no mínimo 6 caracteres."})
 })
 
 export function LoginForm() {
   const navigate = useNavigate()
-  const { register, handleSubmit, formState } = useForm({
+  const parent = useRef(null)
+
+  const { register, handleSubmit, formState: {errors} } = useForm({
     resolver: zodResolver(objectForValidationLoginProfissional)
   })
 
@@ -35,7 +39,12 @@ export function LoginForm() {
   function handleValidationLogin(data){
     console.log('Validating login...')
   }
-  
+
+  // biome-ignore lint/correctness/useExhaustiveDependencies: <explanation>
+  useEffect(() => {
+    parent.current && autoAnimate(parent.current);
+  }, [parent]);  
+
   return (
     <motion.form
       className="p-5 lg:ml-4 md:py-20 md:px-10 md:rounded-2xl space-y-4 bg-white w-full max-w-[40rem] lg:w-[32rem] xl:shadow-2xl"
@@ -52,11 +61,22 @@ export function LoginForm() {
       <span className="font-light">E-mail</span>
       <Input 
         type="text" 
-        {...register('email')} />
+        {...register('email')} 
+        />
+        <div ref={parent}>
+          {errors.email && (
+            <p className="text-red-500 text-xs">{errors.email.message}</p>
+          )}
+        </div>
       <span className="font-light">Senha</span>
       <Input 
         type="password" 
         {...register('senha')} />
+        <div ref={parent}>
+          {errors.senha && (
+            <p className="text-red-500 text-xs">{errors.senha.message}</p>
+          )}
+        </div>
       <div className="flex items-center gap-x-2">
         <Checkbox className={'border-black '} />
         <span className="font-light">Manter-me conectado</span>
